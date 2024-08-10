@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  config:
+    import:
+      env.properties
+  jpa:
+    open-in-view: false
+    hibernate:
+      #      ddl-auto: update
+      ddl-auto: create-drop
+      show-sql: false
+  datasource:
+    url: ${localDBUrl}
+    username: ${localDBUsername}
+    password: ${localDBPassword}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+jwt:
+  # store in secure location for real deal. Got from https://asecuritysite.com/principles/plain - 256-bit hex key.
+  secret-key: ba0fcea3c9fe48e9ae9144a8300504a772ad99421a577424b8b63f2d9bac0668
